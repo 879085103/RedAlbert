@@ -1,0 +1,9 @@
+官方文档链接：http://dotween.demigiant.com/documentation.php#globalSettings
+
+普通版下载地址：http://dotween.demigiant.com/download.php
+
+pro版下载地址：http://pan.baidu.com/s/1dEzTQkL
+
+(pro版提供DOTween Animation和DOTween Path这两个组件，支持可视化编辑)
+
+移动类型：http://robertpenner.com/easing/easing_demo.html

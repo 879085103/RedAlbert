@@ -1,0 +1,709 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="单例模式 外观模式 中介者模式">
+    <Position X="22.744" Y="3.024" Height="0.371" Width="2.208" />
+  </Comment>
+  <Comment CommentText="IWeapon的Fire方法使用了模板模式">
+    <Position X="38.291" Y="0.583" Height="0.497" Width="1.7" />
+  </Comment>
+  <Comment CommentText="策略模式">
+    <Position X="42.942" Y="4.781" Height="0.284" Width="0.889" />
+  </Comment>
+  <Comment CommentText="状态模式(有限状态机)">
+    <Position X="43.373" Y="10.281" Height="0.294" Width="1.447" />
+  </Comment>
+  <Comment CommentText="状态模式(有限状态机)">
+    <Position X="37.78" Y="14.637" Height="0.294" Width="1.447" />
+  </Comment>
+  <Comment CommentText="工厂模式">
+    <Position X="52.409" Y="4.381" Height="0.294" Width="0.851" />
+  </Comment>
+  <Comment CommentText="工厂模式">
+    <Position X="52.254" Y="2.665" Height="0.294" Width="0.851" />
+  </Comment>
+  <Comment CommentText="工厂模式">
+    <Position X="52.248" Y="7.27" Height="0.294" Width="0.851" />
+  </Comment>
+  <Comment CommentText="工厂模式">
+    <Position X="52.61" Y="0.71" Height="0.294" Width="0.851" />
+  </Comment>
+  <Comment CommentText="享元模式">
+    <Position X="43.1" Y="7.554" Height="0.284" Width="0.787" />
+  </Comment>
+  <Comment CommentText="享元模式">
+    <Position X="43.274" Y="0.707" Height="0.284" Width="0.787" />
+  </Comment>
+  <Comment CommentText="建造者模式">
+    <Position X="58.526" Y="0.792" Height="0.314" Width="0.952" />
+  </Comment>
+  <Comment CommentText="Construct方法中带有ICharacterBuilder的形参">
+    <Position X="60.122" Y="0.723" Height="0.508" Width="1.876" />
+  </Comment>
+  <Comment CommentText="工厂中要调用CharacterBuildDirector的Construct方法">
+    <Position X="55.775" Y="0.834" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="BattleSceneState中使用了GameFacade的单例">
+    <Position X="20.269" Y="5.032" Height="0.497" Width="1.7" />
+  </Comment>
+  <Class Name="GameLoop">
+    <Position X="1.25" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\GameLoop.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="controller" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SceneStateController">
+    <Position X="6.5" Y="0.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAACAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\SceneState\SceneStateController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ISceneState">
+    <Position X="12.25" Y="0.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAQAAAAAAEAAAAAAAIAAAAAABAAAAAAAAAiA=</HashCode>
+      <FileName>Assets\Scripts\SceneState\ISceneState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StartSceneState">
+    <Position X="8.75" Y="4.25" Width="4" />
+    <InheritanceLine Type="ISceneState" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.5" Y="3.36" />
+        <Point X="14.5" Y="3.875" />
+        <Point X="11.25" Y="3.875" />
+        <Point X="11.25" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAgAAgAgA=</HashCode>
+      <FileName>Assets\Scripts\SceneState\StartSceneState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuSceneState">
+    <Position X="13.25" Y="4.5" Width="3.25" />
+    <InheritanceLine Type="ISceneState" FixedToPoint="true">
+      <Path>
+        <Point X="14.5" Y="3.36" />
+        <Point X="14.5" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAACAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\SceneState\MainMenuSceneState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BattleSceneState">
+    <Position X="16.75" Y="4.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\SceneState\BattleSceneState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFacade">
+    <Position X="22" Y="3" Width="4" />
+    <AssociationLine Name="mCampSystem" Type="CampSystem" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26" Y="4.724" />
+        <Point X="26.375" Y="4.724" />
+        <Point X="26.375" Y="5.839" />
+        <Point X="28" Y="5.839" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mCharacterSystem" Type="CharacterSystem" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26" Y="4.688" />
+        <Point X="26.375" Y="4.688" />
+        <Point X="26.375" Y="8.213" />
+        <Point X="28" Y="8.213" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mGameEventSystem" Type="GameEventSystem" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26" Y="4.7" />
+        <Point X="28" Y="4.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mCampInfoUI" Type="CampInfoUI" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26" Y="4.72" />
+        <Point X="26.375" Y="4.72" />
+        <Point X="26.375" Y="3.839" />
+        <Point X="28" Y="3.839" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mGamePauseUI" Type="GamePauseUI" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26" Y="4.741" />
+        <Point X="26.375" Y="4.741" />
+        <Point X="26.375" Y="0.839" />
+        <Point X="28" Y="0.839" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mGameStateInfoUI" Type="GameStateInfoUI" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26" Y="4.711" />
+        <Point X="26.375" Y="4.711" />
+        <Point X="26.375" Y="1.839" />
+        <Point X="28" Y="1.839" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mSoldierInfoUI" Type="SoldierInfoUI" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26" Y="4.733" />
+        <Point X="26.375" Y="4.733" />
+        <Point X="26.375" Y="2.75" />
+        <Point X="28" Y="2.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAYEACJgBAAAAAAAAAAAAAAAAIgAAACQQAACCBCAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameFacade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mCampSystem" />
+      <Field Name="mCharacterSystem" />
+      <Field Name="mGameEventSystem" />
+      <Field Name="mCampInfoUI" />
+      <Field Name="mGamePauseUI" />
+      <Field Name="mGameStateInfoUI" />
+      <Field Name="mSoldierInfoUI" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GamePauseUI" Collapsed="true">
+    <Position X="28" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UISystem\GamePauseUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStateInfoUI" Collapsed="true">
+    <Position X="28" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UISystem\GameStateInfoUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierInfoUI" Collapsed="true">
+    <Position X="28" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAANAAAAAAAAAAAAAAIAAAAAAABEAAAAAAACgAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\UISystem\SoldierInfoUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CampInfoUI" Collapsed="true">
+    <Position X="28" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAMAAggABACAgAAAAAAACAAAQACAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UISystem\CampInfoUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameEventSystem" Collapsed="true">
+    <Position X="28" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEventSystem\GameEventSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CampSystem" Collapsed="true">
+    <Position X="28" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CampSystem\CampSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterSystem">
+    <Position X="28" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>ECSAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAgAgAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\CharacterSystem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ICharacter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ICharacter">
+    <Position X="32.5" Y="6.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="mAttr" Type="ICharacterAttribute" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="35.5" Y="7.831" />
+        <Point X="35.875" Y="7.831" />
+        <Point X="35.875" Y="6.373" />
+        <Point X="37.75" Y="6.373" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQCAAFACIAEgAAAAAAgIAAASKBIIAEAAgAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\ICharacter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mAttr" />
+      <Field Name="mWeapon" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="IEnemy">
+    <Position X="30.25" Y="10" Width="3.5" />
+    <AssociationLine Name="mFSMSystem" Type="EnemyFSMSystem" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="33.75" Y="11.125" />
+        <Point X="35.625" Y="11.125" />
+        <Point X="35.625" Y="15.637" />
+        <Point X="36" Y="15.637" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAEEAAAAAAAAAAAAAAAAACAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Enemy\IEnemy.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mFSMSystem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ISoldier">
+    <Position X="37" Y="10" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAEEAAAAAAAAAAAAAAgAACAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Soldier\ISoldier.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mFSMSystem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EnemyEif" Collapsed="true">
+    <Position X="29.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Enemy\EnemyEif.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyOgre" Collapsed="true">
+    <Position X="31.5" Y="13" Width="1.5" />
+    <InheritanceLine Type="IEnemy" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="32" Y="11.939" />
+        <Point X="32" Y="12.876" />
+        <Point X="32" Y="12.876" />
+        <Point X="32" Y="13" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Enemy\EnemyOgre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyTroll" Collapsed="true">
+    <Position X="33.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Enemy\EnemyTroll.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierCaptain" Collapsed="true">
+    <Position X="36" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Soldier\SoldierCaptain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierRookie" Collapsed="true">
+    <Position X="38" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Soldier\SoldierRookie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierSergeant" Collapsed="true">
+    <Position X="40" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Soldier\SoldierSergeant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyFSMSystem">
+    <Position X="36" Y="14.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAEAAIAAAABAAABAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\EnemyAI\EnemyFSMSystem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mCurrentState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="IEnemyState">
+    <Position X="41.75" Y="14.5" Width="4" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAASQACAAAABAEIAAAAAAQAAAAAAAAIAAAEBAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\EnemyAI\IEnemyState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyAttackState">
+    <Position X="41.5" Y="17.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\EnemyAI\EnemyAttackState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyChaseState">
+    <Position X="44.25" Y="17.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAEEA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\EnemyAI\EnemyChaseState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierFSMSystem">
+    <Position X="42.5" Y="10" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAEAAIAAAABAAABAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\SildierAI\SoldierFSMSystem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mCurrentState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ISoldierState">
+    <Position X="47.25" Y="10" Width="4" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAASQACAAAABAEIAAAAAAQAAAAAAAAIAAAEBAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\SildierAI\ISoldierState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierAttackState">
+    <Position X="46.25" Y="12.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\SildierAI\SoldierAttackState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierChaseState">
+    <Position X="48.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\SildierAI\SoldierChaseState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierIdleState">
+    <Position X="50.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\SildierAI\SoldierIdleState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ICharacterAttribute">
+    <Position X="37.75" Y="5" Width="2.5" />
+    <AssociationLine Name="mBaseAttr" Type="CharacterBaseAttr" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="40.25" Y="6.188" />
+        <Point X="40.61" Y="6.188" />
+        <Point X="40.61" Y="8.495" />
+        <Point X="42.5" Y="8.495" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mStrategy" Type="IAttrStrategy" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="40.25" Y="6.188" />
+        <Point X="40.61" Y="6.188" />
+        <Point X="40.61" Y="5.22" />
+        <Point X="42.25" Y="5.22" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAACAACRAgAAAAAAAwAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Attribute\ICharacterAttribute.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mBaseAttr" />
+      <Field Name="mStrategy" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EnemyAttribute" Collapsed="true">
+    <Position X="37.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Attribute\EnemyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierAttribute" Collapsed="true">
+    <Position X="39" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Attribute\SoldierAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterBaseAttr">
+    <Position X="42.5" Y="7.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAEAAQIEAAAAAAAAAAAgAAAABREAAAAAAgRAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Attribute\BaseAttr\CharacterBaseAttr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierAttrStrategy" Collapsed="true">
+    <Position X="41.25" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\AttributeStrategy\SoldierAttrStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.834" />
+  </Class>
+  <Class Name="EnemyAttrStrategy" Collapsed="true">
+    <Position X="43.25" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\AttributeStrategy\EnemyAttrStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IWeapon">
+    <Position X="37.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABYAAAAACIAIgCAAAAAAAAgAgCDEAAFAwgACAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Weapon\IWeapon.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mBaseAttr" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WeaponGun" Collapsed="true">
+    <Position X="35.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAACAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Weapon\WeaponGun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponRifle" Collapsed="true">
+    <Position X="38" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAACAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Weapon\WeaponRifle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponRocket" Collapsed="true">
+    <Position X="40.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAACAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Weapon\WeaponRocket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponBaseAttr">
+    <Position X="42" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAIAAAAAAABEAAAAgAgBAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\Attribute\BaseAttr\WeaponBaseAttr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AttrFactory">
+    <Position X="53.5" Y="2.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAEAAAAAAAAAAAAAgAAEAAEAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Attr\AttrFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.973" />
+  </Class>
+  <Class Name="EnemyFactory" Collapsed="true">
+    <Position X="53.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Character\EnemyFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.479" />
+  </Class>
+  <Class Name="SoldierFactory" Collapsed="true">
+    <Position X="53.75" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Character\SoldierFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.922" />
+  </Class>
+  <Class Name="WeaponFactory">
+    <Position X="53.75" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Weapon\WeaponFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.834" />
+  </Class>
+  <Class Name="LocalAssetFactory" Collapsed="true">
+    <Position X="54" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAIAEAAgA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Assets\LocalAssetFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RemoteAssetsFactory" Collapsed="true">
+    <Position X="54" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAIAEAAgA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Assets\RemoteAssetsFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ResourcesAssetFactory" Collapsed="true">
+    <Position X="54" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAzEAAAAAAAAMAAAKIEAQgA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Assets\ResourcesAssetFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ICharacterBuilder">
+    <Position X="62.25" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABABACEAAAAAAAAAAAAABAAAARIAAAAAEEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Character\Build\ICharacterBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyBuilder" Collapsed="true">
+    <Position X="61.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABABACAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Character\Build\EnemyBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoldierBuilder" Collapsed="true">
+    <Position X="64" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABABACAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Character\Build\SoldierBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterBuildDirector">
+    <Position X="57.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Character\Build\CharacterBuildDirector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FactoryManager">
+    <Position X="46" Y="2.75" Width="3" />
+    <AssociationLine Name="mAssetFactory" Type="IAssetFactory" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="49" Y="3.188" />
+        <Point X="49.375" Y="3.188" />
+        <Point X="49.375" Y="5" />
+        <Point X="50.75" Y="5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mSoldierFactory" Type="ICharacterFactory" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="49" Y="3.188" />
+        <Point X="49.375" Y="3.188" />
+        <Point X="49.375" Y="1.446" />
+        <Point X="51.5" Y="1.446" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mEnemyFactory" Type="ICharacterFactory" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="49" Y="3.188" />
+        <Point X="49.375" Y="3.188" />
+        <Point X="49.375" Y="1.193" />
+        <Point X="51.5" Y="1.193" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="mWeaponFactory" Type="IWeaponFactory" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="49" Y="3.188" />
+        <Point X="49.375" Y="3.188" />
+        <Point X="49.375" Y="7.535" />
+        <Point X="51.5" Y="7.535" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIBAABAAAAAAAAAAAAABAAAAgAAAAAACkAIAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\FactoryManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mAssetFactory" />
+      <Field Name="mSoldierFactory" />
+      <Field Name="mEnemyFactory" />
+      <Field Name="mWeaponFactory" />
+      <Field Name="mAttrFactory" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="IAttrStrategy">
+    <Position X="42.25" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CharacterSystem\AttributeStrategy\IAttrStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IAttrFactory">
+    <Position X="51.25" Y="2.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Attr\IAttrFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ICharacterFactory">
+    <Position X="51.5" Y="0.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Character\ICharacterFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IWeaponFactory">
+    <Position X="51.5" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Weapon\IWeaponFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IAssetFactory">
+    <Position X="50.75" Y="4.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAIAEAAgA=</HashCode>
+      <FileName>Assets\Scripts\Factory\Assets\IAssetFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
