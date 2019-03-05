@@ -67,4 +67,9 @@ public abstract class  ISoldier:ICharacter
         GameFacade.Instance.NotifySubject(GameEventType.SoldierKilled);
     }
 
+    public override void RunVisitor(ICharacterVisitor visitor)
+    {
+        visitor.VisitorSoldier(this);
+    }
+
 }

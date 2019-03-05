@@ -20,6 +20,7 @@ public class GameStateInfoUI:IUISystem
     private float mMsgTimer = 0;
     //提示信息显示时间
     private int mMsgTime = 2;
+    private AliveCountVisit mAliveCountVisitor = new AliveCountVisit();
 
     public override void Init()
     {
@@ -51,6 +52,7 @@ public class GameStateInfoUI:IUISystem
     public override void Update()
     {
         base.Update();
+        UpdateAliveCount();
         if(mMsgTimer > 0)
         {
             mMsgTimer -= Time.deltaTime;
@@ -71,6 +73,14 @@ public class GameStateInfoUI:IUISystem
     {
         mEnergySlider.value = (float)curretEnergy / maxEnergy;
         mEnergyText.text = "(" + curretEnergy + " / " + maxEnergy + ")";
+    }
+    //更新士兵和敌人存活数量
+    public void UpdateAliveCount()
+    {
+        mAliveCountVisitor.Reset();
+        mFacade.RunVisitor(mAliveCountVisitor);
+        mSoldierCount.text = mAliveCountVisitor.soldierCount.ToString();
+        mEnemyCount.text = mAliveCountVisitor.enemyCount.ToString();
     }
 }
 

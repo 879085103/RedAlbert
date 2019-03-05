@@ -37,6 +37,20 @@ public class ArchievementSystem : IGameSystem
         }
         Debug.Log("MaxStageLevel:" + mMaxStageLevel);
     }
-
+    //创建快照
+    public AchievementMemento CreateMemento()
+    {
+        AchievementMemento memento = new AchievementMemento();
+        memento.enemyKilledCount = mEnemyKilledCount;
+        memento.soldierKilledCount = mSoldierKilledCount;
+        memento.maxStageLv = mMaxStageLevel;
+        return memento;
+    }
+   public void SetMemento(AchievementMemento memento)
+    {
+        mEnemyKilledCount = memento.enemyKilledCount;
+        mSoldierKilledCount = memento.soldierKilledCount;
+        mMaxStageLevel = memento.maxStageLv;
+    }
 }
 

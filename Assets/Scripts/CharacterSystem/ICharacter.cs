@@ -65,9 +65,10 @@ public abstract class ICharacter
             mAnim = mGameObject.GetComponentInChildren<Animation>();
         }
     }
+    public bool isKilled { get { return mIsKilled; } }
 
     public abstract void UpdateFSMAI(List<ICharacter> targets);
-
+    public abstract void RunVisitor(ICharacterVisitor visitor);
 
     public void Update()
     {
@@ -139,6 +140,6 @@ public abstract class ICharacter
         mAudio.Play();
     }
 
-
+    
 }
 

@@ -59,6 +59,9 @@ public class GameFacade
         mGamePauseUI.Init();
         mGameStateInfoUI.Init();
         mSoldierInfoUI.Init();
+
+        LoadMemento();
+
     }
     public void Update()
     {
@@ -76,6 +79,7 @@ public class GameFacade
     }
     public void Release()
     {
+
         mArchievementSystem.Release();
         mCampSystem.Release();
         mCharacterSystem.Release();
@@ -87,6 +91,8 @@ public class GameFacade
         mGamePauseUI.Release();
         mGameStateInfoUI.Release();
         mSoldierInfoUI.Release();
+
+        SaveMemento();
     }
 
     public Vector3 GetEnemyTargetPosition()
@@ -145,5 +151,23 @@ public class GameFacade
     public void NotifySubject(GameEventType eventType)
     {
         mGameEventSystem.NotifySubject(eventType);
+    }
+
+    //加载备忘录
+    private void LoadMemento()
+    {
+        AchievementMemento memento = new AchievementMemento();
+        memento.LoadData();
+        mArchievementSystem.SetMemento(memento);
+    }
+    //保存成备忘录
+    private void SaveMemento()
+    {
+        AchievementMemento memento = mArchievementSystem.CreateMemento();
+        memento.SaveDate();
+    }
+    public void RunVisitor(ICharacterVisitor visitor)
+    {
+        mCharacterSystem.RunVisitor(visitor);
     }
 }

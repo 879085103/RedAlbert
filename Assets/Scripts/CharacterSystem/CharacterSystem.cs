@@ -10,17 +10,6 @@ public class CharacterSystem:IGameSystem
     private List<ICharacter> mEnemys = new List<ICharacter>();
     private List<ICharacter> mSoldiers = new List<ICharacter>();
 
-    public ICharacter ICharacter
-    {
-        get
-        {
-            throw new System.NotImplementedException();
-        }
-
-        set
-        {
-        }
-    }
 
     public void AddEnemy(IEnemy enemy)
     {
@@ -84,6 +73,18 @@ public class CharacterSystem:IGameSystem
         {
             character.Release();
             characters.Remove(character);
+        }
+    }
+
+    public void RunVisitor(ICharacterVisitor visitor)
+    {
+        foreach(ICharacter character in mEnemys)
+        {
+            character.RunVisitor(visitor);
+        }
+        foreach(ICharacter character in mSoldiers)
+        {
+            character.RunVisitor(visitor);
         }
     }
 }
