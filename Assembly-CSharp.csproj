@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DesignModeCode\AdapaterDesignMode.cs" />
     <Compile Include="Assets\DesignModeCode\BridgeDesignMode.cs" />
     <Compile Include="Assets\DesignModeCode\BuilderDesignMode.cs" />
     <Compile Include="Assets\DesignModeCode\CommandDesignMode.cs" />
@@ -70,7 +71,9 @@
     <Compile Include="Assets\Scripts\BaseClass\IGameSystem.cs" />
     <Compile Include="Assets\Scripts\BaseClass\IUISystem.cs" />
     <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\CaptiveCamp.cs" />
     <Compile Include="Assets\Scripts\CampSystem\Command\ITrainCommand.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\Command\TrainCaptiveCommand.cs" />
     <Compile Include="Assets\Scripts\CampSystem\Command\TrainSoldierCommand.cs" />
     <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\IEnergyStrategy.cs" />
     <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\SoldierEnergyCostStrategy.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="Assets\Scripts\CharacterSystem\SildierAI\SoldierIdleState.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\ISoldier.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierCaptain.cs" />
+    <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierCaptive.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierRookie.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierSergeant.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Visitor\AliveCountVisit.cs" />

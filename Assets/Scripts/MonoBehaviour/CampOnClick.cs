@@ -11,6 +11,7 @@ public class CampOnClick:MonoBehaviour
     void OnMouseUpAsButton()
     {
         GameFacade.Instance.ShowCampInfo(mCamp);
+        //Debug.Log(mCamp.energyCostTrain + mCamp.soldierType);
     }
 }
 

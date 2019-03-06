@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class ICamp
 {
+    public SoldierType soldierType { get { return mSoldierType; } }
     //兵营对应的游戏物体
     protected GameObject mGameObject;
     protected string mName;

@@ -7,7 +7,8 @@ public enum SoldierType
 {
     Rookie,
     Sergeant,
-    Captain
+    Captain,
+    Captive
 }
 
 

@@ -51,9 +51,13 @@ public abstract class ICharacter
             GameObject child = UnityTool.FindChild(mGameObject, "weapon-point");
             UnityTool.Attach(child, mWeapon.gameObject);
         }
+        get
+        {
+            return mWeapon;
+        }
     }
 
-    public ICharacterAttribute Attr { set { mAttr = value; } }
+    public ICharacterAttribute Attr { set { mAttr = value; }  get { return mAttr; } }
 
     public GameObject gameObject
     {
@@ -63,6 +67,10 @@ public abstract class ICharacter
             mNavAgent = mGameObject.GetComponent<NavMeshAgent>();
             mAudio = mGameObject.GetComponent<AudioSource>();
             mAnim = mGameObject.GetComponentInChildren<Animation>();
+        }
+        get
+        {
+            return mGameObject;
         }
     }
     public bool isKilled { get { return mIsKilled; } }

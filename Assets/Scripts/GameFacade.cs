@@ -115,6 +115,11 @@ public class GameFacade
         mCharacterSystem.AddEnemy(enemy);
     }
 
+    public void RemoveEnemy(IEnemy enemy)
+    {
+        mCharacterSystem.RemoveEnemy(enemy);
+    }
+
     //能量系统
     public bool TakeEnergy(int value)
     {

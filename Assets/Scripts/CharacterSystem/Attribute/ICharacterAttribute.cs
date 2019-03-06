@@ -33,6 +33,9 @@ public class ICharacterAttribute
 
     public int currentHP { get { return mCurretHP; } }
 
+    public IAttrStrategy strategy { get { return mStrategy; } }
+    public CharacterBaseAttr baseAttr { get { return mBaseAttr; } }
+
     public void TakeDamage(int damage)
     {
         damage -= mDmgDescValue;
