@@ -41,6 +41,8 @@ public class CaptiveCamp : ICamp
         get { return mEnergyCostTrain; }
     }
 
+    public override bool isCaptiveCamp { get { return true; } }
+
     public override void Train()
     {
         TrainCaptiveCommand cmd = new TrainCaptiveCommand(mEnemyType, mWeaponType, mPosition, 1);

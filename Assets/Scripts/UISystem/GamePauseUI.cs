@@ -20,6 +20,30 @@ public class GamePauseUI:IUISystem
         mContinueBtn = UITools.FindChild<Button>(mRootUI, "ContinueButton");
         mBackMenuBtn = UITools.FindChild<Button>(mRootUI, "BackMenuButton");
 
+        mContinueBtn.onClick.AddListener(() =>
+        {
+            mRootUI.SetActive(false);
+            Time.timeScale = 1;
+        });
+
+        mBackMenuBtn.onClick.AddListener(() =>
+        {
+            if(mFacade.IsGameOver  == false)
+            mFacade.IsGameOver = true;
+            Time.timeScale = 1;
+        });
+
         Hide();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        ShowStageLevel();
+    }
+
+    public void ShowStageLevel()
+    {
+        mCurretStageLevel.text = mFacade.stageLevel.ToString();
     }
 }

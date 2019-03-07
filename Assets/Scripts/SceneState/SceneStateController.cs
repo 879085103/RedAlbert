@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneStateController
 {
-    private ISceneState mState;
+    public ISceneState mState;
     private AsyncOperation mAO;
     //判断是否执行了StateStart()
-    private bool mIsRunStart = false;
+    public bool mIsRunStart = false;
 
     public void SetState(ISceneState state,bool isLoadScene = true)
     {

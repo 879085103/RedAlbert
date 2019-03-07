@@ -39,6 +39,7 @@ public class CharacterSystem:IGameSystem
         RemoveCharacterIsKilled(mEnemys);
         RemoveCharacterIsKilled(mSoldiers);
 
+
     }
 
     private void UpdateEnemy()
@@ -47,6 +48,7 @@ public class CharacterSystem:IGameSystem
         {
             e.Update();
             e.UpdateFSMAI(mSoldiers);
+            e.EnemyEscapeHandle();
         }
     }
 

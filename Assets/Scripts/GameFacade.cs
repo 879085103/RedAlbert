@@ -55,10 +55,13 @@ public class GameFacade
         mGameEventSystem.Init();
         mStageSystem.Init();
 
+        //初始化UI系统
         mCampInfoUI.Init();
-        mGamePauseUI.Init();
         mGameStateInfoUI.Init();
+        mGamePauseUI.Init();
         mSoldierInfoUI.Init();
+
+        IsGameOver = false;
 
         LoadMemento();
 
@@ -136,6 +139,8 @@ public class GameFacade
     {
         mGameStateInfoUI.ShowMsg(msg);
     }
+    public int stageLevel { get { return mStageSystem.level; } }
+
 
     public void UpdateEnergySlider(int curretEnergy, int maxEnergy)
     {

@@ -9,7 +9,8 @@ public enum GameEventType
     Null,
     EnemyKilled,
     SoldierKilled,
-    NewStage
+    NewStage,
+    EnemyEscaped
 }
 
 public class GameEventSystem:IGameSystem
@@ -62,6 +63,9 @@ public class GameEventSystem:IGameSystem
                     break;
                 case GameEventType.NewStage:
                     mGameEvents.Add(GameEventType.NewStage, new NewStageSubject());
+                    break;
+                case GameEventType.EnemyEscaped:
+                    mGameEvents.Add(GameEventType.EnemyEscaped, new EnemyEscapedSubject());
                     break;
                 default:
                     Debug.LogError("没有对应事件类型" + eventType + "的主题类");

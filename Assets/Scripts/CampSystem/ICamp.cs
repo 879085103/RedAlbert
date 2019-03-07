@@ -84,6 +84,8 @@ public abstract class ICamp
     public abstract int energyCostCampUpgrade { get; }
     public abstract int energyCostWeaponUpgrade { get; }
     public abstract int energyCostTrain { get; }
+    //是否为俘兵营
+    public abstract bool isCaptiveCamp { get; }
 
 
     public abstract void Train();

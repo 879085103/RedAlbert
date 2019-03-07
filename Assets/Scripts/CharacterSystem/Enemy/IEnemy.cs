@@ -66,4 +66,20 @@ public abstract class IEnemy:ICharacter
     {
         visitor.VisitorEnemy(this);
     }
+
+    //敌人成功逃跑的处理
+    public void EnemyEscapeHandle()
+    {
+        //Debug.Log(Vector3.Distance(position, GameFacade.Instance.GetEnemyTargetPosition()));
+        if (!isKilled)
+        {
+            //当敌人和目标点的距离小于2时敌人死亡，血量减少
+            if (Vector3.Distance(position, GameFacade.Instance.GetEnemyTargetPosition()) <= 2f)
+            {
+                Killed();
+                GameFacade.Instance.NotifySubject(GameEventType.EnemyEscaped);
+            }
+        }
+      
+    }
 }

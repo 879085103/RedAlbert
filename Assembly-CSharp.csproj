@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\Factory\Assets\LocalAssetFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Assets\RemoteAssetsFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Assets\ResourcesAssetFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\Assets\ResourcesAssetProxyFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Attr\AttrFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Attr\IAttrFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\Build\CharacterBuildDirector.cs" />
@@ -127,11 +128,13 @@
     <Compile Include="Assets\Scripts\Factory\Weapon\IWeaponFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Weapon\WeaponFactory.cs" />
     <Compile Include="Assets\Scripts\GameEventSystem\GameEventSystem.cs" />
+    <Compile Include="Assets\Scripts\GameEventSystem\Observer\EnemyEscapeObserver\EnemyEscapedObserverGameStateInfoUI.cs" />
     <Compile Include="Assets\Scripts\GameEventSystem\Observer\EnemyKilledObserver\EnemyKilledObserverAchievement.cs" />
     <Compile Include="Assets\Scripts\GameEventSystem\Observer\EnemyKilledObserver\EnemyKilledObserverStageSystem.cs" />
     <Compile Include="Assets\Scripts\GameEventSystem\Observer\IGameEventObserver.cs" />
     <Compile Include="Assets\Scripts\GameEventSystem\Observer\NewStageObserver\NewStageObserverAchievement.cs" />
     <Compile Include="Assets\Scripts\GameEventSystem\Observer\SoldierKilledObserver\SoldierKilledObserverAchievement.cs" />
+    <Compile Include="Assets\Scripts\GameEventSystem\Subject\EnemyEscapedSubject.cs" />
     <Compile Include="Assets\Scripts\GameEventSystem\Subject\EnemyKilledSubject.cs" />
     <Compile Include="Assets\Scripts\GameEventSystem\Subject\IGameEventSubject.cs" />
     <Compile Include="Assets\Scripts\GameEventSystem\Subject\NewStageSubject.cs" />
@@ -417,6 +420,7 @@
       <HintPath>D:/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

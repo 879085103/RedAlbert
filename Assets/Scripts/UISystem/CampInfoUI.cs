@@ -40,11 +40,13 @@ public class CampInfoUI:IUISystem
         mTrainningCount = UITools.FindChild<Text>(mRootUI, "TrainningCount");
         mTrainTime = UITools.FindChild<Text>(mRootUI, "TrainTime");
 
+
+
         mTrainBtn.onClick.AddListener(OnTrainBtnClick);
         mCancelTrainBtn.onClick.AddListener(OnCancelTrainBtnClick);
         mCampUpgradeBtn.onClick.AddListener(OnCampUpgradeClick);
         mWeaponUpgradeBtn.onClick.AddListener(OnWeaponUpgradeClick);
-
+      
         Hide();
 
     }
@@ -126,6 +128,18 @@ public class CampInfoUI:IUISystem
     {
         Show();
         mCamp = camp;
+
+        if (mCamp.isCaptiveCamp == false)
+        {
+            mCampUpgradeBtn.interactable = true;
+            mWeaponUpgradeBtn.interactable = true;
+
+        }
+        else
+        {
+            mCampUpgradeBtn.interactable = false;
+            mWeaponUpgradeBtn.interactable = false;
+        }
 
         mCampIcon.sprite = FactoryManager.assetFactory.LoadSprite(camp.iconSprite);
         mCampName.text = camp.name;

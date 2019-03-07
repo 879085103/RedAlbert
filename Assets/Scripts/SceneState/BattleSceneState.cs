@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine;
 
 
 public class BattleSceneState : ISceneState
 {
     public BattleSceneState(SceneStateController controller) : base("03-BattleScene", controller)
     {
+        Controller = controller;
     }
 
 
 
     public override void StateStart()
     {
+
         GameFacade.Instance.Init();
     }
 

@@ -21,12 +21,13 @@ public class MainMenuSceneState:ISceneState
         {
             Controller.SetState(new BattleSceneState(Controller));
         });
+
     }
  
    
     public override void StateUpdate()
     {
-        
+
     }
 
     public override void StateEnd()

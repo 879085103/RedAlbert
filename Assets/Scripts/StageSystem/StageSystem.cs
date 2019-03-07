@@ -12,6 +12,8 @@ public class StageSystem:IGameSystem
     private Vector3 mTargetPosition;
     private int mCountOfEnemyKilled = 0;
 
+    public int level { get { return mLevel; } }
+
     public override void Init()
     {
         base.Init();

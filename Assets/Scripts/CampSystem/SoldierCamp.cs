@@ -40,6 +40,8 @@ public class SoldierCamp:ICamp
         get { return mEnergyCostTrain; }
     }
 
+    public override bool isCaptiveCamp { get { return false; } }
+
     public override void Train()
     {
         //向mCommands添加训练命令

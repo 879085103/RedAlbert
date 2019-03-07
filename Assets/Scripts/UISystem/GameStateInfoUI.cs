@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameStateInfoUI:IUISystem
 {
-    private List<GameObject> mHearts = new List<GameObject>();
+    public List<GameObject> mHearts = new List<GameObject>();
     private Text mSoldierCount;
     private Text mEnemyCount;
     private Text mCurretStage;
@@ -16,6 +16,8 @@ public class GameStateInfoUI:IUISystem
     private Text mMessage;
     private Slider mEnergySlider;
     private Text mEnergyText;
+
+    private GameObject mPauseUI;
 
     private float mMsgTimer = 0;
     //提示信息显示时间
@@ -27,6 +29,7 @@ public class GameStateInfoUI:IUISystem
         base.Init();
         GameObject canvas = GameObject.Find("Canvas");
         mRootUI = UnityTool.FindChild(canvas, "GameStateInfoUI");
+        mPauseUI = UnityTool.FindChild(canvas, "GamePauseUI");
 
         GameObject heart1 = UnityTool.FindChild(mRootUI, "Heart1");
         GameObject heart2 = UnityTool.FindChild(mRootUI, "Heart2");
@@ -47,12 +50,32 @@ public class GameStateInfoUI:IUISystem
 
         mMessage.text = "";
         mGameOverUI.SetActive(false);
+
+        //注册观察者
+        mFacade.RegisterObserver(GameEventType.EnemyEscaped, new EnemyEscapedObserverGameStateInfoUI(this));
+
+        //暂停按钮监听事件
+        mPauseBtn.onClick.AddListener(() => 
+        {
+            mPauseUI.SetActive(true);
+            Time.timeScale = 0;
+        });
+
+        //游戏结束返回菜单按钮监听事件
+        mBackMenuBtn.onClick.AddListener(() =>
+        {
+            if (mFacade.IsGameOver == false)
+                mFacade.IsGameOver = true;
+            Time.timeScale = 1;
+        });
     }
 
     public override void Update()
     {
+        //Debug.Log(mHearts[0].name + mHearts[1].name + mHearts[2].name);
         base.Update();
         UpdateAliveCount();
+        UpdateStageLevel();
         if(mMsgTimer > 0)
         {
             mMsgTimer -= Time.deltaTime;
@@ -81,6 +104,17 @@ public class GameStateInfoUI:IUISystem
         mFacade.RunVisitor(mAliveCountVisitor);
         mSoldierCount.text = mAliveCountVisitor.soldierCount.ToString();
         mEnemyCount.text = mAliveCountVisitor.enemyCount.ToString();
+    }
+
+    public void UpdateStageLevel()
+    {
+        mCurretStage.text = mFacade.stageLevel.ToString();
+    }
+
+    public void GameOver()
+    {
+        mGameOverUI.SetActive(true);
+        Time.timeScale = 0;
     }
 }
 

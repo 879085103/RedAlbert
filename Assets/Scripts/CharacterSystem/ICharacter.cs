@@ -21,7 +21,7 @@ public abstract class ICharacter
 
     protected bool mIsKilled = false;
     protected bool mCanDestroy = false;
-    protected float mDestroyTimer = 2f;
+    protected float mDestroyTimer = 1f;
 
     public bool canDestroy { get { return mCanDestroy; } }
 
