@@ -21,10 +21,13 @@ public class SoldierChaseState : ISoldierState
         {
             mFSM.PerformTransition(SoldierTransition.NoEnemy);
         }
-        float distance = Vector3.Distance(targets[0].position, mCharacter.position);
-        if(distance <= mCharacter.atkRange)
+        if (targets != null && targets.Count > 0)
         {
-            mFSM.PerformTransition(SoldierTransition.CanAttack);
+            float distance = Vector3.Distance(targets[0].position, mCharacter.position);
+            if (distance <= mCharacter.atkRange)
+            {
+                mFSM.PerformTransition(SoldierTransition.CanAttack);
+            }
         }
     }
 }

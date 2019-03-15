@@ -28,6 +28,7 @@ public class GameEventSystem:IGameSystem
         mGameEvents.Add(GameEventType.EnemyKilled, new EnemyKilledSubject());
         mGameEvents.Add(GameEventType.SoldierKilled, new SoldierKilledSubject());
         mGameEvents.Add(GameEventType.NewStage, new NewStageSubject());
+        mGameEvents.Add(GameEventType.EnemyEscaped, new EnemyEscapedSubject());
     }
 
     public void RegisterObserver(GameEventType eventType,IGameEventObserver observer)
